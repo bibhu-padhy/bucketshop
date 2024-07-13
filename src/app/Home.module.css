@@ -1,0 +1,29 @@
+.imageContainer {
+  position: relative;
+}
+
+.imageContainer:hover {
+  /* Try with an explicit path */
+  cursor: url("/assets/custom-cursor.png"), auto;
+
+  /* If the above doesn't work, try these alternatives one at a time */
+  /* cursor: url('/assets/custom-cursor.png') 16 16, auto; */
+  /* cursor: url('data:image/png;base64,INSERT_BASE64_ENCODED_IMAGE_HERE'), auto; */
+
+  /* Fallback cursors */
+  cursor: pointer;
+  cursor: wait;
+  cursor: crosshair;
+}
+
+/* Fallback hover effect */
+.imageContainer:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}

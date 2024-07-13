@@ -1,0 +1,14 @@
+/* src/styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add any additional global styles below */
+body {
+  @apply bg-background-dark text-text-dark;
+}
+
+/* You can add more global styles or custom utility classes here */
+.imageWrapper {
+  cursor: url("/assets/custom-cursor.png"), auto;
+}

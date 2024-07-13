@@ -17,7 +17,7 @@ export default function Home() {
             />
           </div>
           <h1 className="text-4xl md:text-6xl text-center mt-4">
-            Meteora DLLM
+            Meteora DLMM
           </h1>
         </Link>
       </div>

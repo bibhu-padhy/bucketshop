@@ -12,9 +12,7 @@ export async function getPools(): Promise<MeteoraPools> {
   if (!data.groups) {
     throw new Error(errorMessage);
   }
-  console.log(data.groups);
-
-  return data.groups;
+  return filterTopTVLPairs(data.groups);
 }
 
 export async function getPoolDetails(address: string): Promise<Pool> {
@@ -27,4 +25,22 @@ export async function getPoolDetails(address: string): Promise<Pool> {
   }
 
   return await res.json();
+}
+
+function filterTopTVLPairs(
+  pools: MeteoraPools,
+  topCount: number = 5
+): MeteoraPools {
+  return pools.map((group) => {
+    const sortedPairs = [...group.pairs]
+      .filter((pair) => +pair.liquidity > 500)
+      .sort((a, b) => parseFloat(b.liquidity) - parseFloat(a.liquidity));
+
+    const topPairs = sortedPairs.slice(0, topCount);
+
+    return {
+      ...group,
+      pairs: topPairs,
+    };
+  });
 }

@@ -1,29 +1,51 @@
-.imageContainer {
-  position: relative;
+/* src/Home.module.css */
+
+.main {
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #1a1a1a; /* Dark background for the main container */
+  color: white;
 }
 
-.imageContainer:hover {
-  /* Try with an explicit path */
-  cursor: url("/assets/custom-cursor.png"), auto;
-
-  /* If the above doesn't work, try these alternatives one at a time */
-  /* cursor: url('/assets/custom-cursor.png') 16 16, auto; */
-  /* cursor: url('data:image/png;base64,INSERT_BASE64_ENCODED_IMAGE_HERE'), auto; */
-
-  /* Fallback cursors */
-  cursor: pointer;
-  cursor: wait;
-  cursor: crosshair;
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* Fallback hover effect */
-.imageContainer:hover::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-  pointer-events: none;
+.poolGroupsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.poolGroup {
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.buildingsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+/* Styles for individual buildings */
+.buildingsContainer > div {
+  width: 80px; /* Adjust based on your PoolBuilding component's width */
+  height: 160px; /* Adjust based on your PoolBuilding component's height */
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .poolGroupsContainer {
+    grid-template-columns: 1fr;
+  }
 }

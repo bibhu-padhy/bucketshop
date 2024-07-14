@@ -3,6 +3,7 @@
 import React from "react";
 import { Building } from "./Building";
 import { Pool } from "../types";
+import { getRandomGameCityColor } from "../lib/tools";
 
 interface PoolBuildingProps {
   pool: Pool;
@@ -11,11 +12,6 @@ interface PoolBuildingProps {
 }
 
 const PoolBuilding: React.FC<PoolBuildingProps> = ({ pool, width, height }) => {
-  function getRandomGameCityColor() {
-    const colors = ["#1E90FF", "#DC143C", "#32CD32", "#FFD700", "#708090"];
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    return colors[randomIndex];
-  }
   const color = getRandomGameCityColor();
 
   return (

@@ -1,10 +1,9 @@
 // src/app/page.tsx
 
-"use client"; // This is important for using client-side components in Next.js 13+
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import { mockMeteoraPools } from "./mockData";
 import styles from "../Home.module.css";
 import PoolGroups from "./components/PoolGroup";
 import { getPools } from "./services/poolService";

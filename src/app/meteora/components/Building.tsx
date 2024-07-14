@@ -1,4 +1,5 @@
 import React from "react";
+import { getRandomGameCityColor } from "../lib/tools";
 
 interface WindowProps {
   x: number;
@@ -112,7 +113,7 @@ export const Building: React.FC<BuildingProps> = ({
         y={buildingHeight - 40}
         width="20"
         height="40"
-        fill="brown"
+        fill={getRandomGameCityColor()}
         stroke="#555555"
         strokeWidth="1"
       />

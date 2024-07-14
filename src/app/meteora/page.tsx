@@ -21,7 +21,7 @@ export default function Home() {
       }
     };
     pools();
-  }, []);
+  }, []); 
   return (
     <main className={styles.main}>
       <TransformWrapper

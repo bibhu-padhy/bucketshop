@@ -4,6 +4,7 @@ import React from "react";
 import { Building } from "./Building";
 import { Pool } from "../types";
 import { getRandomGameCityColor } from "../lib/tools";
+import Link from "next/link";
 
 interface PoolBuildingProps {
   pool: Pool;
@@ -16,25 +17,15 @@ const PoolBuilding: React.FC<PoolBuildingProps> = ({ pool, width, height }) => {
 
   return (
     <div style={{ position: "relative", width, height }}>
-      <Building
-        width={width}
-        height={height}
-        color={color}
-        windowRows={4}
-        windowColumns={3}
-      />
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          padding: "5px",
-          background: "rgba(0,0,0,0.5)",
-          color: "white",
-          fontSize: "10px",
-        }}
-      ></div>
+      <Link href={`/meteora/${pool.address}`}>
+        <Building
+          width={width}
+          height={height}
+          color={color}
+          windowRows={4}
+          windowColumns={3}
+        />
+      </Link>
     </div>
   );
 };

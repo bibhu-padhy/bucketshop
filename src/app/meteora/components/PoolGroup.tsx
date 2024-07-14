@@ -19,8 +19,8 @@ const PoolGroups: React.FC<PoolGroupProps> = ({ group }) => {
           <PoolBuilding
             key={pool.address}
             pool={pool}
-            width={50}
-            height={100}
+            width={45}
+            height={90}
           />
         ))}
       </div>

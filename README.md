@@ -1,3 +1,93 @@
+# Meteora DLMM Pool Visualizer
+
+This project is a Next.js application that visualizes Decentralized Liquidity Market Maker (DLMM) pools for the Meteora protocol. It provides an interactive cityscape representation of pool data and detailed information about individual pools.
+
+## Features
+
+- Interactive cityscape visualization of DLMM pools
+- Detailed view of individual pool statistics
+- Responsive design for various screen sizes
+- Server-side rendering for improved performance and SEO
+
+## Technologies Used
+
+- Next.js 13+ (with App Router)
+- React
+- TypeScript
+- Tailwind CSS
+
+## Project Structure
+
+```
+/
+├── app/
+│   ├── page.tsx
+│   ├── [address]/
+│   │   └── page.tsx
+│   └── layout.tsx
+├── components/
+│   ├── Building.tsx
+│   ├── PoolGroups.tsx
+│   ├── PoolBuilding.tsx
+│   └── BackButton.tsx
+├── lib/
+│   └── tools.ts
+├── services/
+│   └── poolService.ts
+├── styles/
+│   └── Home.module.css
+└── public/
+```
+
+## Setup and Installation
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/bibhu-padhy/bucketshop.git
+   cd bucketshop
+   ```
+
+2. Install dependencies:
+
+   ```
+   npm install
+   ```
+
+3. Create a `.env.local` file in the root directory and add any necessary environment variables.
+
+4. Run the development server:
+
+   ```
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+## Usage
+
+- The home page displays a cityscape visualization of all DLMM pools.
+- Click on a building to view detailed information about a specific pool.
+- Use the zoom and pan controls to navigate the cityscape.
+- On the detail page, use the back button to return to the main view.
+
+## Deployment
+
+This project can be deployed on platforms that support Next.js applications, such as Vercel or Netlify. Follow the platform-specific instructions for deploying a Next.js app.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+[Specify your license here, e.g., MIT License]
+
+## Acknowledgements
+
+- Meteora Protocol for providing the DLMM pool data
+- [Any other acknowledgements or credits]
+
 # City Block Interface for DLMM Pools
 
 ## Concept Overview

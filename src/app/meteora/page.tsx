@@ -16,12 +16,14 @@ export default function Home() {
       try {
         const pools = await getPools();
         setPools(pools);
+        console.log(pools);
+        
       } catch (error) {
         console.log(error);
       }
     };
     pools();
-  }, []); 
+  }, []);
   return (
     <main className={styles.main}>
       <TransformWrapper
@@ -31,11 +33,6 @@ export default function Home() {
       >
         {({ zoomIn, zoomOut, resetTransform }) => (
           <>
-            <div className={styles.controls}>
-              {/* <button onClick={() => zoomIn()}>+</button>
-              <button onClick={() => zoomOut()}>-</button>
-              <button onClick={() => resetTransform()}>Reset</button> */}
-            </div>
             <TransformComponent>
               <div className={styles.poolGroupsContainer}>
                 {pools.map((group, index) => (

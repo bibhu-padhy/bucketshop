@@ -23,20 +23,18 @@
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-.poolGroup > h2{
+.poolGroup > h2 {
   text-align: center;
 }
 
 .buildingsContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
+  margin: auto;
 }
 
-/* Styles for individual buildings */
 .buildingsContainer > div {
-  width: 80px; /* Adjust based on your PoolBuilding component's width */
-  height: 160px; /* Adjust based on your PoolBuilding component's height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -53,7 +51,7 @@
   }
 }
 
-.detail_screen{
+.detail_screen {
   display: flex;
   justify-content: center;
 }

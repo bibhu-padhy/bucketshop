@@ -18,8 +18,6 @@ export async function getPools(): Promise<MeteoraPools> {
 export async function getPoolDetails(address: string): Promise<Pool> {
   const URL = `https://dlmm-api.meteora.ag/pair/${address}`;
   const res = await fetch(URL);
-  console.log(URL);
-
   if (!res.ok) {
     throw new Error(errorMessage);
   }
@@ -40,7 +38,33 @@ function filterTopTVLPairs(
 
     return {
       ...group,
-      pairs: topPairs,
+      pairs: organizeBuildingsIntoRows(topPairs),
     };
   });
+}
+
+export function organizeBuildingsIntoRows(pairs: Pool[]) {
+  const totalBuildings = pairs.length;
+  let rows: any = [];
+
+  if (totalBuildings === 1) {
+    rows = [[pairs[0]]];
+  } else if (totalBuildings === 2) {
+    rows = [[pairs[0], pairs[1]]];
+  } else if (totalBuildings === 3) {
+    rows = [[pairs[0]], [pairs[1], pairs[2]]];
+  } else if (totalBuildings === 4) {
+    rows = [[pairs[0]], [pairs[1], pairs[2], pairs[3]]];
+  } else if (totalBuildings >= 5) {
+    rows = [
+      [pairs[0], pairs[1]],
+      [pairs[2], pairs[3], pairs[4]],
+    ];
+    // If there are more than 5 pairs, add them to the second row
+    for (let i = 5; i < totalBuildings; i++) {
+      rows[1].push(pairs[i]);
+    }
+  }
+
+  return rows;
 }

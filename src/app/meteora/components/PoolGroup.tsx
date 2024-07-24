@@ -2,12 +2,10 @@
 
 import React from "react";
 import PoolBuilding from "./PoolBuilding";
-
 import styles from "../../Home.module.css";
-import { PoolGroup } from "../types";
 
 interface PoolGroupProps {
-  group: PoolGroup;
+  group: any;
 }
 
 const PoolGroups: React.FC<PoolGroupProps> = ({ group }) => {
@@ -15,13 +13,12 @@ const PoolGroups: React.FC<PoolGroupProps> = ({ group }) => {
     <div className={styles.poolGroup}>
       <h2>{group.name}</h2>
       <div className={styles.buildingsContainer}>
-        {group.pairs.map((pool) => (
-          <PoolBuilding
-            key={pool.address}
-            pool={pool}
-            width={45}
-            height={90}
-          />
+        {group.pairs.map((pools: any) => (
+          <div>
+            {pools.map((pool: any) => (
+              <PoolBuilding key={pool.address} pool={pool} />
+            ))}
+          </div>
         ))}
       </div>
     </div>
